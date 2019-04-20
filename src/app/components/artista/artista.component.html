@@ -1,0 +1,42 @@
+<div class="row m-5">
+    <div class="col-2">
+        <img [src]="artista[1].img_artista" class="img-thumbnail img-circle">
+    </div>
+    <div class="col">
+        <h3>{{artista[1].nombre_artista}}</h3>
+        <p>
+            <a [href]="" target="_blank"></a>
+            <!-- artista.external_urls.spotify -->
+        </p>
+    </div>
+    <div class="col-4 text-right">
+        <button routerLink="/" routerLinkActive="router-link-active" class="btn btn-outline-danger">Regresar</button>
+    </div>
+</div>
+<div class="row m-5">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Album</th>
+                    <th>Canción</th>
+                    <th>Vista Previa</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let music of artista ">
+                    <td>
+                        <img [src]="music.img_cancion" class="img-thumb">
+                    </td>
+                    <td>{{music.nombre_album}}</td>
+                    <td>{{music.nombre_cancion}}</td>
+                    <td>
+                        <audio [src]="music.url_cancion" controls></audio>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
